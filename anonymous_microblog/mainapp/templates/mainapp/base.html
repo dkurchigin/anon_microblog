@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {{ title|title }}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="create_block">
+            <form class="form_message_create" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Создать">
+                <br>
+            </form>
+        </div>
+        <div class="old_message">
+            {% for message in all_messages %}
+                <div class="dict_name">
+                    {{ message.created }}
+                    {{ message.text }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
