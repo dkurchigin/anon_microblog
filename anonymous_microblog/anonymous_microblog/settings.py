@@ -11,19 +11,24 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from configparser import RawConfigParser
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+local_config_path = os.path.join(BASE_DIR, 'conf', 'local.conf')
+config = RawConfigParser()
+config.read(local_config_path)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4y*6$u95wv5h*5p6p1x0*vfpql1gn8&-^m@&x0rcda74i4cvp1'
+SECRET_KEY = config.get('main', 'SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config.getboolean('main', 'DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -76,8 +81,12 @@ WSGI_APPLICATION = 'anonymous_microblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_db',
+        'USER': config.get('main', 'USER'),
+        'PASSWORD': config.get('main', 'PASSWORD'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

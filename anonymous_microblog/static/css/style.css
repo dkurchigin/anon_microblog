@@ -1,0 +1,81 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+input[type=submit] {
+    border-radius: 5px;
+    font: bold 15px / 21px 'helvetica';
+    color: Black;
+    background-color: Lavender;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.form_message_create {
+    background-color: Indigo;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    padding-top: 20px;
+}
+
+.form_message_create h1 {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'helvetica';
+}
+
+.form_message_create p {
+    color: White;
+    font: bold 15px / 21px 'helvetica';
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+input[type=text] {
+    width: 60%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.message {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 3px;
+    word-wrap: break-word;
+}
+
+.message_data {
+    float: left;
+    background-color: lavender;
+    padding: 0px 10px;
+    border-radius: 5px 5px 0px 0px;
+    font: 13px / 21px 'helvetica';
+}
+
+.message_text {
+    clear: both;
+    background-color: lavender;
+    border-radius: 0px 5px 5px 5px;
+    padding: 10px;
+    font: bold 15px / 25px 'helvetica';
+}
+
+.text_body {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -84,9 +84,10 @@ target/
 *.pyc
 __pycache__/
 local_settings.py
+**/.idea/
 
 .env
 db.sqlite3
-
+*.conf
 
 ###Was stolen from here https://github.com/jpadilla/django-project-template/blob/master/.gitignore###

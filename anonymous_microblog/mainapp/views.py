@@ -14,7 +14,6 @@ class MessageCreateView(CreateView):
         context['title'] = "Анонимный микроблог"
         all_messages = Message.objects.all().order_by('-created')
         context['all_messages'] = all_messages
-        print(all_messages)
         return context
 
     def get_success_url(self):
